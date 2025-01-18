@@ -18,13 +18,6 @@ type ConfigFileDetails struct {
 var envVarsDetails = EnvVarsDetails{
 	Prefix: "FEATHER",
 }
-var deamonConfigDetails = ConfigFileDetails{
-	ConfigFilePath: GetEnv("CONFIG_FILE_PATH"),
-}
-
-var commandConfigFileDetails = ConfigFileDetails{
-	ConfigFilePath: GetEnv("CONFIG_FILE_PATH"),
-}
 
 func GetEnv(envVar string) (envVal string) {
 	viper.SetEnvPrefix(envVarsDetails.Prefix)
