@@ -29,8 +29,8 @@ func GetEnv(envVar string) (envVal string) {
 	return envVal
 }
 
-func LoadConfigFile(ConfigFileDetails *ConfigFileDetails) {
-	viper.SetConfigFile(ConfigFileDetails.ConfigFilePath)
+func (c *ConfigFileDetails) LoadConfigFile() {
+	viper.SetConfigFile(c.ConfigFilePath)
 	err := viper.ReadInConfig()
 	if err != nil {
 		panic(fmt.Sprintf("Failed to read config file: %v", err))
