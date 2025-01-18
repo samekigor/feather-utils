@@ -37,7 +37,7 @@ func (c *ConfigFileDetails) LoadConfigFile() {
 	}
 }
 
-func GetValueFromConfig(yamlKey string) string {
+func (c *ConfigFileDetails) GetValueFromConfig(yamlKey string) string {
 	err := viper.ReadInConfig()
 	if err != nil {
 		panic(fmt.Sprintf("Failed to read config file: %v", err))
